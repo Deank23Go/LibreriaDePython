@@ -7,7 +7,7 @@ editoriales =[]
 codigos =[]
 precios =[]
 cantidades = []
-
+#kljjkjfsdfjkhbdsjkbf kjlnlkdf
 nombres=[]
 fechas_revistas=[]
 editores = []
