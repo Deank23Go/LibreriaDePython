@@ -1,5 +1,5 @@
 import sys
-
+#varibles reservadas para el registro de libros
 titulos =[]
 autores =[]
 fechas = []
@@ -7,12 +7,55 @@ editoriales =[]
 codigos =[]
 precios =[]
 cantidades = []
-#kljjkjfsdfjkhbdsjkbf kjlnlkdf
+#varibles reservadas para el registro de las revistas
 nombres=[]
 fechas_revistas=[]
 editores = []
 codigo_revista =[]
 precios_revista =[]
+#Variables Aumentan/acumuladas en la Opcion #3
+indices = 0
+totales = 0
+
+def libros():
+    input('\n=======Registro de Libros=======')
+    titulo= input('titulo del libro: ')
+    autor = input('autor del libro: ')
+    fecha = input('fecha de publicacion del libro: ')
+    editorial = input('editorial del libro: ')
+    codigo = int(input('codigo de referencia: '))
+    precio = float(input('precio del libro: '))
+    cantidad = 0.0
+    titulos.append(titulo)
+    autores.append(autor)
+    fechas.append(fecha)
+    editoriales.append(editorial)
+    codigos.append(codigo)
+    precios.append(precio)
+    cantidades.append(cantidad)
+def revistas():
+    input('\n=======Registro de revistas======')
+    nombre= input('nombre de la revista: ')
+    editor = input('editor de la revista: ')
+    fecha_re= input('fecha de publicacion de la revista: ')
+    codidor = int(input('codigo de referencial: '))
+    precio_re = float(input('precio de la revista: '))
+    nombres.append(nombre)
+    editores.append(editor)
+    fechas_revistas.append(fecha_re)
+    codigo_revista.append(codidor)
+    precios_revista.append(precio_re)
+def IMPRIMIR():
+    print("/=====================================================/")
+    print("|NOMBRE              |CANT.     |PRECIO    |IMPORTE   |")
+    print("/=====================================================/")
+def vacio():
+    print("|--------------------+----------+----------+----------|")
+    print('|===========No Hay Articulos Disponibles==============|')
+    print("|--------------------+----------+----------+----------|")
+
+        
+
 
 
 while True:
@@ -30,33 +73,9 @@ while True:
 
     if elecion == "1":
         if input('Desea registrar (l/r): ') =="l":
-            input('\n=======Registro de Libros=======')
-            titulo= input('titulo del libro: ')
-            autor = input('autor del libro: ')
-            fecha = input('fecha de publicacion del libro: ')
-            editorial = input('editorial del libro: ')
-            codigo = int(input('codigo de referencia: '))
-            precio = float(input('precio del libro: '))
-            cantidad = 0.0
-            titulos.append(titulo)
-            autores.append(autor)
-            fechas.append(fecha)
-            editoriales.append(editorial)
-            codigos.append(codigo)
-            precios.append(precio)
-            cantidades.append(cantidad)
+            libros()
         else:
-            input('\n=======Registro de revistas======')
-            nombre= input('nombre de la revista: ')
-            editor = input('editor de la revista: ')
-            fecha_re= input('fecha de publicacion de la revista: ')
-            codidor = int(input('codigo de referencial: '))
-            precio_re = float(input('precio del libro: '))
-            nombres.append(nombre)
-            editores.append(editor)
-            fechas_revistas.append(fecha_re)
-            codigo_revista.append(codidor)
-            precios_revista.append(precio_re)
+            revistas()
 
     elif elecion == "2":
         if input('Que deseas Comprar (l / r): ')  == "l":
@@ -112,18 +131,13 @@ while True:
 
 
     elif elecion == "3":
-        if len(titulos) <=0:
-            print("|--------------------+----------+----------+----------|")
-            print('|===========No Hay Articulos Disponibles==============|')
-            print("|--------------------+----------+----------+----------|")
+        if len(titulos) and len(nombres) <=0:
+            vacio()
             continue
-
+        
         if input('Desea ver la informacion del los libros o revistas (l/r): ') == "l":
-            indices = 0
-            totales = 0
-            print("+--------------------+----------+----------+----------+")
-            print("|NOMBRE              |CANT.     |PRECIO    |IMPORTE   |")
-            print("+--------------------+----------+----------+----------+")
+            
+            IMPRIMIR()
             while indices < len(titulos):
                 titulo = titulos[indices]
                 precio = precios[indices]
@@ -135,18 +149,14 @@ while True:
                 totales += importe
                 indices += 1
         else:
-            indices = 0
-            totales = 0
-            print("+--------------------+----------+----------+----------+")
-            print("|NOMBRE              |CANT.     |PRECIO    |IMPORTE   |")
-            print("+--------------------+----------+----------+----------+")
+            IMPRIMIR()
             while indices < len(nombres):
                 nombre = nombres[indices]
                 precio = precios_revista[indices]
                 cantidad = cantidades[indices]
                 importe = precios_revista * cantidad
                 print('|{:<20}|{:>10.2f}|{:>10.2f}|{:>10.2f}|'.format(
-                            titulo, cantidad, precio, importe))
+                            nombre, cantidad, precio, importe))
                 print('+=============+===========+===========+==========+====')
                 totales += importe
                 indices += 1
