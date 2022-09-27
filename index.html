@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <center>
+
+
+        <div class="conter">
+            <div class="titulo">
+                <h1 id="titulo_main">TRELLO</h1>
+            </div>
+
+            <div class="row">
+                <div class="col-6 ">
+                    <div class="sesion ">
+                        <h1 class="cabecera">Lista De Tares</h1>
+                        <div class="col-6 listT">
+
+                            <div class="mb-3">
+                                <!-- <label for="id" class="form-label">Titulo</label> -->
+                                <input type="text" class="form-control" id="titulo" placeholder="Agregar Tarea"
+                                    required>
+                            </div>
+                            <!-- <div class="mb-3">
+                            <label for="usuario" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="titulo" placeholder="Persona Responsable"
+                                required> -->
+                        </div>
+                        <div class="mb-3 d-grid gap-2">
+                            <button class="botn " onclick="agregarTarea()">Añadir tarjeta</button>
+                        </div>
+                        <!-- <div id="lista_pendiente" class="pendiente"> -->
+                    </div>
+
+                   
+                </div>
+
+                <div class="col-6">
+                    <div class="sesion">
+                        <h1 class="cabecera">En Proceso</h1>
+                        <div class="col-6 listT">
+                            <div class="mb-3">
+                                <!-- <label for="id" class="form-label">Titulo</label> -->
+                                <input type="text" class="form-control" id="titulo" placeholder="En Ejecucion" required>
+                            </div>
+                            <!-- <div class="mb-3">
+                            <label for="usuario" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="titulo" placeholder="Persona Responsable"
+                                required> -->
+                        </div>
+                        <div class="mb-3 d-grid gap-2">
+                            <button class="botn " onclick="agregarTarea()">Añadir tarjeta</button>
+                        </div>
+                        <!-- <div id="lista_completadas" class="pendiente"> -->
+                    </div>
+                    
+                </div>
+                <div class="col-6">
+                    <div class="sesion">
+                        <h1 class="cabecera">Hecho</h1>
+                        <div class="col-6 listT">
+                            <div class="mb-3">
+                                <!-- <label for="id" class="form-label">Titulo</label> -->
+                                <input type="text" class="form-control" id="titulo" placeholder="Tarea Realizada"
+                                    required>
+                            </div>
+                            <!-- <div class="mb-3">
+                            <label for="usuario" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="titulo" placeholder="Persona Responsable"
+                                required> -->
+                        </div>
+                        <div class="mb-3 d-grid gap-2">
+                            <button class="botn " onclick="agregarTarea()">Añadir tarjeta</button>
+                        </div>
+                        <!-- <div id="lista_completadas" class="pendiente"> -->
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </center>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
